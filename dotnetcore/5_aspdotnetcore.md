@@ -44,7 +44,6 @@
 
 -  -  -  -  -
 
-<!-- .slide: class="fortable" -->
 # ASP.NET Core 或 ASP.NET？
 - 下表將比較 ASP.NET Core 與 ASP.NET 4.x。
 <escape>
@@ -55,6 +54,6 @@
         <tbody>
             <tr><td>為 Windows、macOS 或 Linux 建置</td><td>為 Windows 建置</td></tr><tr><td>從 ASP.NET Core 2.x 開始，Razor 頁面是建立 Web UI 的建議方法。 另請參閱MVC、 Web API和SignalR。</td><td>使用Web Forms、 SignalR、 MVC、 web API、 webhook或Web Pages</td></tr><tr><td>每部電腦多個版本</td><td>每部電腦一個版本</td></tr><tr><td>在 Visual Studio、Visual Studio for Mac 或 Visual Studio Code 中使用 C# 或 F# 進行開發</td><td>在 Visual Studio 中使用 C#、VB 或 F# 進行開發</td></tr><tr><td>效能比 ASP.NET 4.x 更高</td><td>效能良好</td></tr><tr><td>使用 .NET Core 執行階段</td><td>使用 .NET Framework 執行階段</td></tr>
         </tbody>
-    </table>
+    </table><!-- .element style="font-size: 0.5em;" -->
 </escape>
 

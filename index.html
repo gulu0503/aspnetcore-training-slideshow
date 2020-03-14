@@ -15,6 +15,7 @@
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/monokai.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -32,37 +33,37 @@
       <div class="slides">
         <section>
           <section
-            data-markdown="/dotnetcore/dotnetcore.md"
+            data-markdown="/dotnetcore/1_dotnetcore.md"
             data-separator="-  -  -  -  -"
           ></section>
         </section>
         <section>
           <section
-            data-markdown="/dotnetcore/dotnetstandard.md"
+            data-markdown="/dotnetcore/2_dotnetstandard.md"
             data-separator="-  -  -  -  -"
           ></section>
         </section>
         <section>
           <section
-            data-markdown="/dotnetcore/dotnetcorecli.md"
+            data-markdown="/dotnetcore/3_dotnetcorecli.md"
             data-separator="-  -  -  -  -"
           ></section>
         </section>
         <section>
           <section
-            data-markdown="/dotnetcore/createfirstproject.md"
+            data-markdown="/dotnetcore/4_createfirstproject.md"
             data-separator="-  -  -  -  -"
           ></section>
         </section>
         <section>
           <section
-            data-markdown="/dotnetcore/aspdotnetcore.md"
+            data-markdown="/dotnetcore/5_aspdotnetcore.md"
             data-separator="-  -  -  -  -"
           ></section>
         </section>
         <section>
           <section
-            data-markdown="/dotnetcore/consoletoweb.md"
+            data-markdown="/dotnetcore/6_consoletoweb.md"
             data-separator="-  -  -  -  -"
           ></section>
         </section>
@@ -86,13 +87,25 @@
         //預覽連結
         //previewLinks: true,
         slideNumber: true,
+        // chalkboard: { 
+        //   // optionally load pre-recorded chalkboard drawing from file
+        //   src: "chalkboard.json",
+        // },
         dependencies: [
           { src: "plugin/markdown/marked.js" },
           { src: "plugin/markdown/markdown.js" },
           { src: "plugin/notes/notes.js", async: true },
           { src: "plugin/highlight/highlight.js", async: true },
-          { src: "plugin/zoom-js/zoom.js", async: true }
-        ]
+          { src: "plugin/zoom-js/zoom.js", async: true },
+          { src: 'plugin/chalkboard/chalkboard.js' }
+        ],
+        keyboard: {
+            67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+        }
       });
     </script>
   </body>

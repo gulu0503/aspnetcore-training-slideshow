@@ -43,7 +43,7 @@ dotnet <host-options> <command> <arguments> <common-options>
 您在命令列上傳遞的選項即為叫用命令的選項。 例如當您執行 `dotnet publish --output /build_output`，--output 選項及其值會傳遞給 publish 命令。
 
 -  -  -  -  -
-<!-- .slide: class="fortable" -->
+
 # .NET Core 驅動程式命令
 <escape>
     <table class="tableizer-table">
@@ -98,7 +98,7 @@ dotnet <host-options> <command> <arguments> <common-options>
           <td></td>
         </tr>
       </tbody>
-    </table>
+    </table><!-- .element style="font-size: 0.5em;" -->
 </escape>
 
 - 參考連結
