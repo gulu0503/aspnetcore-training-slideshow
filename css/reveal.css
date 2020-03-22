@@ -1628,3 +1628,6 @@ body {
 .reveal [data-markdown] table tbody tr:last-child th,
 .reveal [data-markdown] table tbody tr:last-child td {
   border: 2px solid #a3a3a3; }
+
+div.reveal {
+  font-size: 34px; }

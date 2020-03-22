@@ -64,6 +64,7 @@ dotnet run
 - dotnet run會呼叫dotnet 組建，以確保組建目標已建立，然後呼叫 dotnet <assembly.dll> 以執行目標應用程式。
 
 - 如下圖，執行後會印出Hello World!字樣。
+
 ![](../images/firstapp01.png)
 
 -  -  -  -  -

@@ -123,11 +123,15 @@ namespace dotnetcore_firstapp_training
 
 -  -  -  -  -
 
-# 使用Routing和Endpoints Middleware
+# 使用Routing和Endpoints Middleware（一）
 
 - 剛剛的寫法只要網址是在 http://localhost:5000 下，不管是 http://localhost:5000 或  http://localhost:5000/123 又或是 http://localhost:5000/123/abcd ，都會回傳Hello World!字樣，現在我們希望能夠改為：
   1. 當瀏覽 http://localhost:5000 時回傳Hello World!字樣。
   2. 瀏覽 http://localhost:5000 下的其他網址回傳404。
+
+-  -  -  -  -
+
+# 使用Routing和Endpoints Middleware（二）
 
 - 修改Startup的Configure方法
 
@@ -427,6 +431,10 @@ dotnet run
     using Microsoft.Extensions.Logging;
 ```
 
+-  -  -  -  -
+-  
+# Logger（三）
+
 - CreateDefaultBuilder 預設會新增主控台（Console.Log）、偵錯（Debug.Log）、EventSource 的Log提供者，我們將他改寫為只有主控台的Log提供者。
 
 ```csharp
@@ -445,7 +453,7 @@ dotnet run
 
 -  -  -  -  -
 
-# Logger（三）
+# Logger（四）
 
 - 在網址為 `/` 時，寫一個Log，然後看看主控台有沒有出現這段Log。
 
@@ -514,35 +522,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace dotnetcore_firstapp_training
-{
-    public class ProductContext : DbContext
-    {
-        public DbSet<Product> Products { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite("Data Source=blogging.db");
-    }
-
-    public class Product
-    {
-        public int ProductId { get; set; }
-        public string Name { get; set; }
-    }
-}
-```
-
--  -  -  -  -
-
-# Entity Framework Core（四）
-
-- 在根目錄新增一個 Model.cs檔案。
-
-```csharp
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-
-namespace dotnetcore_firstapp_training
+namespace aspnetcore_demo
 {
     public class ProductContext : DbContext
     {
@@ -562,7 +542,7 @@ namespace dotnetcore_firstapp_training
 
 -  -  -  -  -
 
-# Entity Framework Core（五）
+# Entity Framework Core（四）
 
 - 執行以下命令：
   1. 這會安裝 dotnet ef 以及在專案上執行命令所需的設計套件。 
@@ -623,6 +603,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 ```csharp
     public class ProductContext : DbContext
     {
+        public ProductContext(DbContextOptions<ProductContext> options):base(options){}
         public DbSet<Product> Products { get; set; }
     }
 ```
@@ -723,7 +704,7 @@ using Microsoft.EntityFrameworkCore;
 ``` csharp
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ProductContext>(options => options.UseSqlite("Data Source=blogging.db"));
+            services.AddDbContext<ProductContext>(options => options.UseSqlite("Data Source=product.db"));
 
             var configBuilder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
