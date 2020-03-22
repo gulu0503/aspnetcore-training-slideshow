@@ -13,6 +13,8 @@
 4. 開始第一隻 .NET Core程式
 5. ASP.NET Core
 6. 將.NET Core Console專案轉為ASP.NET Core專案
+7. 開發相關（launchSettings.json & DI）
+8. 部署相關（IIS & Docker）
 
 ## .NET Core版本
 - 使用 .NET Core 3.1 版本
